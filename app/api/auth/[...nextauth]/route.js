@@ -17,8 +17,9 @@ const handler = NextAuth({
    callbacks: {
 
       async session({ session }) {
+         // console.log("BackEnd Session: ", session);
          const sessionUser = await User.findOne({
-            emial: session.user.email
+            email: session.user.email
          })
 
          session.user.id = sessionUser.id.toString();

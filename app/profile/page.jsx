@@ -36,14 +36,16 @@ const MyProfile = () => {
    }
 
    return (
-      <Profile
-         name="My"
-         desc="Welcome to your personalised profile page"
-         data={posts}
-         handleEdit={handleEdit}
-         handleDelete={handleDelete}
+      <>
+         <Profile
+            name="My"
+            desc="Welcome to your personalised profile page"
+            data={posts}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
 
-      />
+         />
+      </>
    )
 }
 

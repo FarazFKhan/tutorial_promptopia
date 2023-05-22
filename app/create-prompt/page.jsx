@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -9,7 +9,13 @@ import Form from "@components/Form";
 const CreatePrompt = () => {
 
    const router = useRouter();
-   const { data: session } = useSession();
+   const { data: session, status } = useSession();
+
+   useEffect(() => {
+      // console.log("session status: ", status);
+      // console.log("session: ", session)
+
+   }, [status, session])
 
    const [submitting, setSubmitting] = useState(false);
    const [post, setPost] = useState({
