@@ -1,6 +1,7 @@
 import "@styles/globals.css"
 import Nav from "@components/Nav"
 import Provider from "@components/Provider"
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
    title: "Promtopia",
@@ -20,6 +21,7 @@ const RootLayout = ({ children }) => {
                <mian className="app">
                   <Nav />
                   {children}
+                  <Analytics />
                </mian>
 
             </Provider>
